@@ -17,7 +17,7 @@ class Testing extends StatefulWidget {
 
 class _TestingState extends State<Testing> {
 
-  var emailController = TextEditingController();
+  var emailController    = TextEditingController();
   var passwordController = TextEditingController();
 
   @override
@@ -36,7 +36,6 @@ class _TestingState extends State<Testing> {
           SizedBox(height: Dimensions.height20,),
           GestureDetector(
             onTap: (){
-
             },
             child:  Container(
               padding: EdgeInsets.all(Dimensions.height20),

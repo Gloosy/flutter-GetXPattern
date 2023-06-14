@@ -17,15 +17,14 @@ class ExpandableText extends StatefulWidget {
 class _ExpandableTextState extends State<ExpandableText> {
   late String firstHalf;
   late String secondHaft;
-  bool expanded = true;
-  double textHeight = Dimensions.screenHeight / 4.015;
+  bool expanded       = true;
+  double textHeight   = Dimensions.screenHeight / 4.015;
 
   @override
   void initState() {
     if (widget.text.length > textHeight) {
       firstHalf = widget.text.substring(0, textHeight.toInt());
-      secondHaft =
-          widget.text.substring(textHeight.toInt() + 1, widget.text.length);
+      secondHaft = widget.text.substring(textHeight.toInt() + 1, widget.text.length);
     } else {
       firstHalf = widget.text;
       secondHaft = '';

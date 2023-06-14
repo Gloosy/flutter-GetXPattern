@@ -5,6 +5,7 @@ import 'package:food_delivery_app/utils/api_url.dart';
 import 'package:http/http.dart' as http;
 import '../../utils/app_exception.dart';
 class ApiService {
+
   late String token;
 
   ApiService() {
@@ -32,11 +33,11 @@ class ApiService {
     };
     var request = http.Request(
         'POST', Uri.parse(uri));
-    request.body = json.encode({
-      "name": data.name,
-      "email": data.email,
-      "password": data.password,
-      "phone": data.phone
+    request.body  = json.encode({
+      "name"      : data.name,
+      "email"     : data.email,
+      "password"  : data.password,
+      "phone"     : data.phone
     });
     request.headers.addAll(headers);
 
@@ -54,8 +55,8 @@ class ApiService {
     };
     var request = http.Request('POST', Uri.parse(uri));
     request.body = json.encode({
-      "email": email,
-      "password": password
+      "email"    : email,
+      "password" : password
     });
     request.headers.addAll(headers);
     var response = await request.send();
@@ -63,6 +64,8 @@ class ApiService {
     print("$resource");
     return json.decode(resource);
   }
+
+  
 }
 
 dynamic returnJsonResponse(http.Response response) {

@@ -20,6 +20,7 @@ class AuthRepo {
       rethrow;
     }
   }
+
   Future<UserResponse> login(String email,String password) async {
     try{
       dynamic response = await apiService.userLogin(ApiUrl.loginUrl,email,password);
@@ -29,12 +30,13 @@ class AuthRepo {
       rethrow;
     }
   }
+
    Future<void> saveUserToken(String token)async{
     apiService.token = token;
     await sharedPreferences.setString(SharedPref.TOKEN, token);
   }
 
-   bool getUserToken(){
+  bool getUserToken(){
     return sharedPreferences.containsKey(SharedPref.TOKEN);
   }
 

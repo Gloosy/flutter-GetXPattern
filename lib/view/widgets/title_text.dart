@@ -7,12 +7,13 @@ class TitleText extends StatelessWidget {
   double size;
   TextOverflow overflow;
 
-  TitleText(
-      {super.key,
+  TitleText({
+      super.key,
       this.color = const Color(0xFF332d2b),
       required this.text,
       this.overflow = TextOverflow.ellipsis,
-      this.size = 0});
+      this.size = 0
+  });
 
   @override
   Widget build(BuildContext context) {

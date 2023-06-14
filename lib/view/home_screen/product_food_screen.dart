@@ -20,7 +20,7 @@ class FoodBodyScreen extends StatefulWidget {
 }
 
 class _FoodBodyScreenState extends State<FoodBodyScreen> {
-  ProductController productController = Get.put(ProductController());
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -45,7 +45,7 @@ class _FoodBodyScreenState extends State<FoodBodyScreen> {
               ),
             )
           : CarouselSlider.builder(
-              itemCount: product.length ??=0,
+              itemCount: product.length ?? 0,
               itemBuilder: (context, index, realIdx) {
                 return GestureDetector(
                   onTap: (){

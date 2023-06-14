@@ -56,6 +56,7 @@ class Data {
     }
     return data;
   }
+  
 }
 
 class Attributes {
@@ -100,20 +101,20 @@ class Attributes {
   set iconUrl(String? iconUrl) => _iconUrl = iconUrl;
 
   Attributes.fromJson(Map<String, dynamic> json) {
-    _title = json['title'];
-    _createdAt = json['createdAt'];
-    _updatedAt = json['updatedAt'];
+    _title       = json['title'];
+    _createdAt   = json['createdAt'];
+    _updatedAt   = json['updatedAt'];
     _publishedAt = json['publishedAt'];
-    _iconUrl = json['iconUrl'];
+    _iconUrl     = json['iconUrl'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['title'] = _title;
-    data['createdAt'] = _createdAt;
-    data['updatedAt'] = _updatedAt;
+    data['title']       = _title;
+    data['createdAt']   = _createdAt;
+    data['updatedAt']   = _updatedAt;
     data['publishedAt'] = _publishedAt;
-    data['iconUrl'] = _iconUrl;
+    data['iconUrl']     = _iconUrl;
     return data;
   }
 }

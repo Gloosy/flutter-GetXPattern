@@ -27,6 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Get.offNamed(RouteHelper.initial);
     });
   }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -15,9 +15,10 @@ class CartController extends GetxController{
     getCartData();
     super.onInit();
   }
+
   Map<int,CartModel> _items = {};
   Map<int,CartModel> get items => _items;
-  List<CartModel> storageItems= []; //to store data from local storage form sharedPreferences
+  List<CartModel> storageItems= []; //to store data from local storage to sharedPreferences
 
   void addItem(Data product,int quantity){
     //_items = {};
@@ -27,14 +28,14 @@ class CartController extends GetxController{
       _items.update(product.id!, (value) {
         totalQuantity = value.quantity! + quantity;
         return CartModel(
-            id: value.id  ,
-            price: value.price,
-            quantity: value.quantity! + quantity,
-            img: value.img,
-            isExist: true,
-            name: value.name,
-            time:DateTime.now().toString(),
-            product: product
+            id       : value.id  ,
+            price    : value.price,
+            quantity : value.quantity! + quantity,
+            img      : value.img,
+            isExist  : true,
+            name     : value.name,
+            time     : DateTime.now().toString(),
+            product  : product
         );
       });
       //if product quantity == 0 remove
@@ -46,19 +47,18 @@ class CartController extends GetxController{
       if(quantity > 0){
         _items.putIfAbsent(product.id!, () {
           return CartModel(
-              id: product.id!,
-              price: product.attributes!.price,
-              quantity: quantity,
-              img: product.attributes!.thumbnail?.data?.attributes?.url,
-              isExist: true,
-              name: product.attributes!.title,
-              time:DateTime.now().toString(),
+              id        : product.id!,
+              price     : product.attributes!.price,
+              quantity  : quantity,
+              img       : product.attributes!.thumbnail?.data?.attributes?.url,
+              isExist   : true,
+              name      : product.attributes!.title,
+              time      : DateTime.now().toString(),
               product: product
           );
         });
       }else{
         Get.snackbar('Item count', 'Add quantity',backgroundColor: Colors.white,colorText: Colors.black);
-
       }
     }
     cartRepo.addToCartList(getItems);
@@ -73,7 +73,6 @@ class CartController extends GetxController{
       return false;
     }
   }
-
 
   int getQuantity( Data product){
     var quantity= 0;
@@ -133,17 +132,21 @@ class CartController extends GetxController{
     _items= {};
     update();
   }
+
   List<CartModel> getCartHistoryList(){
     return cartRepo.getCartHistory();
   }
+
   set setItems(Map<int,CartModel> setItems){
       _items={};
       _items = setItems;
   }
+
   void addToCartList(){
     cartRepo.addToCartList(getItems);
     update();
   }
+
   void removeItems(){
     _items = {};
   }

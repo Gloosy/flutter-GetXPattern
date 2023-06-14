@@ -111,9 +111,9 @@ class CartHistoryScreen extends StatelessWidget {
                       height: Dimensions.height20 * 4,
                       width: Dimensions.width20 * 12.5,
                       child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: itemPerOrder[i],
-                          itemBuilder: (context, index) {
+                          scrollDirection : Axis.horizontal,
+                          itemCount       : itemPerOrder[i],
+                          itemBuilder     : (context, index) {
                             if (listCounter < getHistoryList.length) {
                               listCounter++;
                             }
@@ -140,7 +140,7 @@ class CartHistoryScreen extends StatelessWidget {
                           }),
                     ),
                     Expanded(
-                        child: SizedBox(
+                      child: SizedBox(
                       //color: Colors.redAccent,
                       height: Dimensions.height20 * 4,
                       child: Column(

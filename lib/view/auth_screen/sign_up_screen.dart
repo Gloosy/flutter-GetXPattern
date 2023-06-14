@@ -11,10 +11,10 @@ import '../../utils/dimensions.dart';
 
 class SignUpScreen extends StatelessWidget {
 
-  var emailController = TextEditingController();
+  var emailController    = TextEditingController();
   var passwordController = TextEditingController();
-  var phoneController = TextEditingController();
-  var nameController = TextEditingController();
+  var phoneController    = TextEditingController();
+  var nameController     = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,10 +99,11 @@ class SignUpScreen extends StatelessWidget {
   }
 
   void _registration(AuthController authController) async {
-    String name = nameController.text.trim();
-    String email = emailController.text.trim();
+
+    String name     = nameController.text.trim();
+    String email    = emailController.text.trim();
     String password = passwordController.text.trim();
-    String phone = phoneController.text.trim();
+    String phone    = phoneController.text.trim();
 
     if (name.isEmpty &&
         phone.isEmpty &&

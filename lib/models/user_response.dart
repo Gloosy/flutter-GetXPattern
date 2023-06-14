@@ -25,8 +25,8 @@ class UserResponse {
   bool? get success => _success;
   set success(bool? success) => _success = success;
   User? get user => _user;
-  set user(User? user) => _user = user;
-  String? get accessToken => _accessToken;
+  set user(User? user)                 => _user = user;
+  String? get accessToken              => _accessToken;
   set accessToken(String? accessToken) => _accessToken = accessToken;
 
   UserResponse.fromJson(Map<String, dynamic> json) {

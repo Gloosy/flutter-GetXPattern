@@ -47,10 +47,12 @@ class CartScreen extends StatelessWidget {
              backgroundColor: AppColors.mainColor,
              iconColor: Colors.white,
            ),
-         ),
+          ),
+
           SizedBox(
             width: Dimensions.width20 * 7,
           ),
+
           GestureDetector(
             onTap: (){
               Get.toNamed(RouteHelper.getInitial());
@@ -61,6 +63,7 @@ class CartScreen extends StatelessWidget {
               iconColor: Colors.white,
             ),
           ),
+
           AppIcon(
             icon: Icons.shopping_cart,
             backgroundColor: AppColors.mainColor,
@@ -203,7 +206,7 @@ class CartScreen extends StatelessWidget {
                   );
                 });
             } else {
-              return const  Center(child: Text('No Items.'));
+              return const Center(child: Text('No Items.'));
             }
           },
         ));

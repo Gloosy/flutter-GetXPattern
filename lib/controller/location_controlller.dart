@@ -76,7 +76,7 @@ class LocationController extends GetxController implements GetxService {
         if (_changeAddress) {
           String address = await getAddressFromGeocode(
               LatLng(position.target.latitude, position.target.longitude));
-          addressPage ? _placemark = Placemark(name: address): _pickPlacemark = Placemark(name: address);
+              addressPage ? _placemark = Placemark(name: address): _pickPlacemark = Placemark(name: address);
         }
       } catch (e) {
         print('error :$e');
@@ -96,13 +96,12 @@ class LocationController extends GetxController implements GetxService {
     return address;
   }
 
-
   late Map<String, dynamic> _getAddress;
   Map<String, dynamic> get getAddress => _getAddress;
 
-   getUserAddress(){
+  getUserAddress(){
     late AddressModel addressModel;
-    _getAddress  = jsonDecode(locationRepo.getUserAddress()); //jsonDecode convert String to Mao<String ,dynamic>
+      _getAddress  = jsonDecode(locationRepo.getUserAddress()); //jsonDecode convert String to Mao<String ,dynamic>
     try{
       addressModel = AddressModel.fromJson( jsonDecode(locationRepo.getUserAddress()));
     }catch(e){
@@ -115,6 +114,7 @@ class LocationController extends GetxController implements GetxService {
   List<String> get addressTypeList => _addressTypeList;
   int _addressTypeIndex = 0;
   int get addressTypeIndex => _addressTypeIndex;
+
   void setAddressTypeIndex(int index){
      _addressTypeIndex = index;
      update();
@@ -124,6 +124,5 @@ class LocationController extends GetxController implements GetxService {
     String userAddress = jsonEncode(addressModel.toJson());
     return await locationRepo.saveUserAddress(userAddress);
   }
-
 
 }

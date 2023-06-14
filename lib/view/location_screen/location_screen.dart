@@ -10,7 +10,6 @@ import 'package:food_delivery_app/view/widgets/title_text.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 import '../../utils/colors.dart';
 
 class LocationScreen extends StatefulWidget {
@@ -33,6 +32,7 @@ class _LocationScreenState extends State<LocationScreen> {
 
   @override
   void initState() {
+
     _islogged = Get.find<AuthController>().autoLogin();
     if (Get.find<LocationController>().addressList.isNotEmpty) {
       Get.find<LocationController>().getUserAddress();
@@ -47,6 +47,7 @@ class _LocationScreenState extends State<LocationScreen> {
           double.parse(Get.find<LocationController>().getAddress['longitude']));
     }
     super.initState();
+
   }
 
   @override
@@ -66,6 +67,7 @@ class _LocationScreenState extends State<LocationScreen> {
           if(controller.addressList.isNotEmpty){
             addressController.text = controller.getUserAddress().address;
           }
+          
           addressController.text =
           '${controller.placeMark.name ??''}${controller.placeMark.locality ??''}${controller.placeMark.postalCode ?? ''}${controller.placeMark.country?? ''}';
           return SingleChildScrollView(
@@ -82,7 +84,6 @@ class _LocationScreenState extends State<LocationScreen> {
                       border: Border.all(width: 2, color: Colors.black12)),
                   child: Stack(
                     children: [
-
                       GoogleMap(
                         initialCameraPosition:
                         CameraPosition(target: _initialPosition, zoom: 17),

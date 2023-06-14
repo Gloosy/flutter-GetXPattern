@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 import '../../utils/colors.dart';
 import '../../utils/dimensions.dart';
 
@@ -45,7 +43,6 @@ class TextFieldWidget extends StatelessWidget {
                     color: Colors.white
                 )
             ),
-
         ),
       ),
     );

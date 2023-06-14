@@ -16,11 +16,11 @@ Future<void> init() async{
   final sharedPreferences = await SharedPreferences.getInstance();
   Get.lazyPut(()=> sharedPreferences);
   //api
-  Get.lazyPut(()=> ApiService()); 
-  Get.lazyPut(()=>GoogleMapService() );
+  Get.lazyPut(() => ApiService()); 
+  Get.lazyPut(() => GoogleMapService() );
 
   //repo
-  Get.lazyPut(()=>ProductRepository());
+  Get.lazyPut(() => ProductRepository());
   Get.lazyPut(() => CartRepo(sharedPreferences : Get.find()));
   Get.lazyPut(() => AuthRepo(apiService: Get.find(), sharedPreferences:Get.find()));
   Get.lazyPut(() => LocationRepo(locationService: Get.find(), sharedPreferences:Get.find()));
@@ -30,5 +30,5 @@ Future<void> init() async{
   Get.lazyPut(() => ProductController());
   Get.lazyPut(() => CartController(cartRepo: Get.find()));
   Get.lazyPut(() => LocationController(locationRepo: Get.find()));
-
+  
 }

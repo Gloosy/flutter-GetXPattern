@@ -54,7 +54,8 @@ class AuthController extends GetxController implements GetxService{
     _isLoading = false;
     update();
   }
-   bool autoLogin(){
+  
+  bool autoLogin(){
      print('${authRepo.getUserToken()}');
     return authRepo.getUserToken();
   }

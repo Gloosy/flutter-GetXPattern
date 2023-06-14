@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../data/api/google_map_service.dart';
 
 class LocationRepo {
+  
   final GoogleMapService locationService;
   final SharedPreferences sharedPreferences;
   LocationRepo({required this.locationService, required this.sharedPreferences});
@@ -18,6 +19,7 @@ class LocationRepo {
     print('get');
     return sharedPreferences.getString(SharedPref.userAddress)?? '';
   }
+  
   Future<bool> saveUserAddress(String address)async {
     print('save');
     return await sharedPreferences.setString(SharedPref.userAddress, address);

@@ -5,7 +5,6 @@ import 'package:food_delivery_app/utils/api_url.dart';
 class ProductRepository{
   final ApiService _apiService =ApiService();
 
-
   Future<ProductModel> getAllProduct () async{
     try{
       var response = await _apiService.getAll(ApiUrl.allProductUrl);
@@ -15,4 +14,5 @@ class ProductRepository{
       rethrow;
     }
   }
+
 }

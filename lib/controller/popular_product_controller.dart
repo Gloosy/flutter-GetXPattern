@@ -9,6 +9,7 @@ import '../models/cart_model.dart';
 import '../models/product_model.dart';
 
 class ProductController extends GetxController {
+
   final _productRepository = ProductRepository();
 
   @override
@@ -29,6 +30,7 @@ class ProductController extends GetxController {
 
   ApiResponse<ProductModel> allProductList = ApiResponse.loading();
 
+  // return type as dynamic type
   onSetProductList(ApiResponse<ProductModel> response){
     allProductList = response;
     print(" controller1:$_listProducts");
@@ -56,6 +58,7 @@ class ProductController extends GetxController {
     }
     update();
   }
+
   int checkQuantity(int quantity){
     if((_inCartItems + quantity)< 0){
       Get.snackbar('product', 'can\'t less than zero',backgroundColor: Colors.white,colorText: Colors.black);
@@ -72,6 +75,7 @@ class ProductController extends GetxController {
       return quantity;
     }
   }
+
   void initProduct(Data product,CartController cart){
     _quantity = 0;
     _inCartItems = 0;
@@ -84,6 +88,7 @@ class ProductController extends GetxController {
     }
     print('quantity in cart is $_inCartItems');
   }
+
   void addItem(Data product ){
       _cart.addItem(product, _quantity);
       _quantity = 0;
@@ -97,10 +102,12 @@ class ProductController extends GetxController {
   int get totalItems{
     return _cart.totalItems;
   }
+  
   List<CartModel> get getItems{
     return _cart.getItems;
   }
-  }
+
+}
 
 
 
