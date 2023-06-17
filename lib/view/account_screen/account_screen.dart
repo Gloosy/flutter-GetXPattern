@@ -43,7 +43,7 @@ class AccountScreen extends StatelessWidget {
       margin: EdgeInsets.only(top: Dimensions.height20),
       child: Column(
         children: [
-          AccountWidget(appIcon: AppIcon(icon: Icons.person,backgroundColor: AppColors.mainColor),titleText:TitleText(text: 'Chhay')),
+          AccountWidget(appIcon: AppIcon(icon: Icons.person,backgroundColor: AppColors.mainColor),titleText:TitleText(text: 'Hello world')),
           AccountWidget(appIcon: AppIcon(icon: Icons.email,backgroundColor: AppColors.yellowColor),titleText:TitleText(text: 'email')),
           AccountWidget(appIcon: AppIcon(icon: Icons.phone,backgroundColor: AppColors.yellowColor),titleText:TitleText(text: 'Phone')),
           AccountWidget(appIcon: AppIcon(icon: Icons.location_on,backgroundColor: AppColors.mainColor),titleText:TitleText(text: 'Address')),

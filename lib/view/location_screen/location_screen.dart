@@ -61,13 +61,10 @@ class _LocationScreenState extends State<LocationScreen> {
       ),
       body: SafeArea(
         child: GetBuilder<LocationController>(
-
             builder: (controller){
-
           if(controller.addressList.isNotEmpty){
             addressController.text = controller.getUserAddress().address;
           }
-          
           addressController.text =
           '${controller.placeMark.name ??''}${controller.placeMark.locality ??''}${controller.placeMark.postalCode ?? ''}${controller.placeMark.country?? ''}';
           return SingleChildScrollView(

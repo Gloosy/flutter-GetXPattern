@@ -17,6 +17,7 @@ class ProductController extends GetxController {
     getAllProductList();
     super.onInit();
   }
+  
   List<dynamic> _listProducts = [];
   List<dynamic> get listProduct => _listProducts;
 
@@ -62,7 +63,7 @@ class ProductController extends GetxController {
   int checkQuantity(int quantity){
     if((_inCartItems + quantity)< 0){
       Get.snackbar('product', 'can\'t less than zero',backgroundColor: Colors.white,colorText: Colors.black);
-    if(_inCartItems > 0)
+      if(_inCartItems > 0)
       {
         _quantity =-_inCartItems;
         return _quantity;

@@ -147,30 +147,30 @@ class Attributes {
 
 
   Attributes.fromJson(Map<String, dynamic> json) {
-    _title = json['title'];
-    _createdAt = json['createdAt'];
-    _updatedAt = json['updatedAt'];
-    _publishedAt = json['publishedAt'];
-    _price = json['price'];
-    _rating = json['rating'];
-    _description = json['description'];
-    _quantity = json['quantity'];
-    _category = CategoryModel.fromJson(json['category']);
-    _thumbnail = Thumbnail.fromJson(json['thumbnail']);
+    _title        = json['title'];
+    _createdAt    = json['createdAt'];
+    _updatedAt    = json['updatedAt'];
+    _publishedAt  = json['publishedAt'];
+    _price        = json['price'];
+    _rating       = json['rating'];
+    _description  = json['description'];
+    _quantity     = json['quantity'];
+    _category     = CategoryModel.fromJson(json['category']);
+    _thumbnail    = Thumbnail.fromJson(json['thumbnail']);
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['title'] = _title;
-    data['createdAt'] = _createdAt;
-    data['updatedAt'] = _updatedAt;
+    data['title']       = _title;
+    data['createdAt']   = _createdAt;
+    data['updatedAt']   = _updatedAt;
     data['publishedAt'] = _publishedAt;
-    data['price'] = _price;
-    data['rating'] = _rating;
+    data['price']       = _price;
+    data['rating']      = _rating;
     data['description'] = _description;
-    data['quantity'] = _quantity;
-    data['category'] = _category;
-    data['thumbnail'] = _thumbnail;
+    data['quantity']    = _quantity;
+    data['category']    = _category;
+    data['thumbnail']   = _thumbnail;
     return data;
   }
 }

@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:food_delivery_app/models/cart_model.dart';
 
@@ -18,7 +17,9 @@ class CartController extends GetxController{
 
   Map<int,CartModel> _items = {};
   Map<int,CartModel> get items => _items;
-  List<CartModel> storageItems= []; //to store data from local storage to sharedPreferences
+
+  //to store data from local storage to sharedPreferences
+  List<CartModel> storageItems= []; 
 
   void addItem(Data product,int quantity){
     //_items = {};
@@ -54,7 +55,7 @@ class CartController extends GetxController{
               isExist   : true,
               name      : product.attributes!.title,
               time      : DateTime.now().toString(),
-              product: product
+              product   : product
           );
         });
       }else{
@@ -102,18 +103,19 @@ class CartController extends GetxController{
       return e.value;
     }).toList();
   }
-   double get totalAmount {
+
+  double get totalAmount {
     double total = 0;
     _items.forEach((key, value) {
-      total += value.quantity! * double.parse(value.price!) ;
+      total += value.quantity! * double.parse(value.price!);
     });
     return total;
   }
 
   //getCartData checking local storage have data or no if have set to map items
   List<CartModel> getCartData(){
-  setCart = cartRepo.getCartList();
-  return storageItems;
+    setCart = cartRepo.getCartList();
+    return storageItems;
   }
 
   set setCart(List<CartModel> items){
@@ -128,6 +130,7 @@ class CartController extends GetxController{
     cartRepo.addToCartHistoryList();
     clear();
   }
+
   void clear(){
     _items= {};
     update();
@@ -150,4 +153,5 @@ class CartController extends GetxController{
   void removeItems(){
     _items = {};
   }
+
 }

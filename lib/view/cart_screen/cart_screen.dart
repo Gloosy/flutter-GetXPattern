@@ -38,6 +38,7 @@ class CartScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+
          GestureDetector(
            onTap: (){
              Get.toNamed(RouteHelper.getInitial());
@@ -69,6 +70,7 @@ class CartScreen extends StatelessWidget {
             backgroundColor: AppColors.mainColor,
             iconColor: Colors.white,
           ),
+          
         ],
       ),
     );
@@ -125,7 +127,7 @@ class CartScreen extends StatelessWidget {
                          ),
                        ),
                         Expanded(
-                            child: Container(
+                          child: Container(
                           height: Dimensions.height20 * 4.5,
                           padding: EdgeInsets.only(left: Dimensions.width5),
                           decoration: BoxDecoration(

@@ -9,6 +9,7 @@ class LocationRepo {
   
   final GoogleMapService locationService;
   final SharedPreferences sharedPreferences;
+  
   LocationRepo({required this.locationService, required this.sharedPreferences});
 
   Future getAddressFromGeocode(LatLng latLng) async {

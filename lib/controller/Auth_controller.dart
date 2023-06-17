@@ -15,11 +15,11 @@ class AuthController extends GetxController implements GetxService{
 
   ApiResponse<UserResponse> userResponse = ApiResponse.loading();
 
-   onSetUserResponse(ApiResponse<UserResponse> response){
+  onSetUserResponse(ApiResponse<UserResponse> response){
      userResponse = response;
      //print('set user value : $response');
      update();
-   }
+  }
 
   onSetAuthResponse(ApiResponse<UserResponse> response){
     userResponse = response;

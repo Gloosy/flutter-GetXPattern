@@ -15,7 +15,6 @@ class FoodDetailColumn extends StatelessWidget {
     required this.titleText,
     this.rating = 'none',this.price = '0',this.quantity = '0'
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Column(

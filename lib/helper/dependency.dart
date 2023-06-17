@@ -15,6 +15,7 @@ import '../data/api/google_map_service.dart';
 Future<void> init() async{
   final sharedPreferences = await SharedPreferences.getInstance();
   Get.lazyPut(()=> sharedPreferences);
+  
   //api
   Get.lazyPut(() => ApiService()); 
   Get.lazyPut(() => GoogleMapService() );
